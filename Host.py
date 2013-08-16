@@ -20,28 +20,23 @@ class Host:
         return self.name
     def isValidIP(self):
         try:
-            addr = inet_pton(AF_INET, self.address)
-        except AttributeError:
-            try:
-                addr = inet_aton(self.address)
-            except socket.error:
-                return False
-            return address.count('.') == 3
-        except socket.error:
+            addr = inet_aton(self.address)
+        except error:
             return False
-        return True
+        return self.address.count('.') == 3
     def isPortUp(self):
         result = False
         s = socket(AF_INET, SOCK_STREAM)
-        if (self.isValidIP == False):
+        if (self.isValidIP() == True):
+            print "Porty" + self.address
             try:
-                for i in range(5900,5902):
+                for i in [5800]:
                     s.settimeout(5)
                     result = s.connect_ex((gethostbyname(self.address), i))
+                    print i, " Result: ", result
                     if result == 0:
-                        result = True
+                        print "Up"
+                        return True
             finally:
                 s.close()
-        else:
-            result
         return result

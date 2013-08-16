@@ -15,9 +15,12 @@ class UltraVNC():
                 print self.program_directory, len(self.program_directory)
     def connect(self, ip):
         if (len(self.program_directory) > 0):
+            print "DC"
             thread = Thread(target = start, args = ([ip, self.program_directory],))
             thread.start()
         
 def start(arg):
+    print "DC2"
+    print arg[1]
     arguments = [arg[1], "-autoreconnect", "-connect", arg[0]]
     subprocess.call(arguments)

@@ -17,7 +17,7 @@ ID_REMOVE = 2
 
 ICON = "pinger.ico"
 
-WAIT_TIME = 1
+#WAIT_TIME = 
 
 class gui(wx.Frame):
     def __init__(self, *args, **kwds):
@@ -57,6 +57,7 @@ class gui(wx.Frame):
         self.thread = threading.Thread(target=self.updatingThread, args=[self.stop_event])
         self.thread.start()
     def doubleclick(self,event):
+        
         index = event.GetSelection()
         #if (self.hm.checkPortUp(index)):
         self.ultravnc.connect(self.hm.getHostname(index))
@@ -98,7 +99,7 @@ class gui(wx.Frame):
             finally:
                 #self.mutex.wait()
                 self.mutex.release()      
-            time.sleep(WAIT_TIME)
+            #time.sleep(WAIT_TIME)
 
     def startLoading(self):
         # Make cursor busy
