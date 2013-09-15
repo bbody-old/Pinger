@@ -74,7 +74,6 @@ class gui(wx.Frame):
         self.xmlManager.writeHostList(self.hm.getHosts())
         # Destroy window
         self.Destroy()
-        print "Hello"
         sys.exit(0)
         exit(0)
         
@@ -183,21 +182,9 @@ class gui(wx.Frame):
 
     def __do_layout(self):
         # begin wxGlade: Pinger.__do_layout
-        sizer_4 = wx.BoxSizer(wx.VERTICAL)
-        sizer_2 = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_5 = wx.BoxSizer(wx.VERTICAL)
-        grid_sizer_2 = wx.FlexGridSizer(1, 1, 0, 0)
-        sizer_3 = wx.BoxSizer(wx.VERTICAL)
-        grid_sizer_1 = wx.FlexGridSizer(1, 2, 0, 0)
         sizer_1 = wx.BoxSizer(wx.VERTICAL)
-        sizer_1.Add(self.hostsList, 1, wx.EXPAND | wx.ALIGN_RIGHT | wx.ALIGN_BOTTOM, 0)
-        sizer_4.Add(sizer_1, 80, wx.EXPAND, 0)
-        sizer_3.Add(grid_sizer_1, 1, wx.EXPAND, 0)
-        sizer_2.Add(sizer_3, 25, wx.EXPAND, 0)
-        sizer_5.Add(grid_sizer_2, 1, wx.EXPAND, 0)
-        sizer_2.Add(sizer_5, 10, wx.EXPAND, 0)
-        sizer_4.Add(sizer_2, 8, wx.EXPAND, 20)
-        self.SetSizer(sizer_4)
+        sizer_1.Add(self.hostsList, 1, wx.EXPAND | wx.ALIGN_RIGHT | wx.ALIGN_LEFT | wx.ALIGN_TOP | wx.ALIGN_BOTTOM, 0)
+        self.SetSizer(sizer_1)
         self.Layout()
         # end wxGlade
 
