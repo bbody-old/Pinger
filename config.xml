@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <config>
+	<!-- Leave directory empty if you don't have UltraVNC-->
 	<ultravnc directory="" />
 </config>

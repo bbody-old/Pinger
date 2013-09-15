@@ -27,16 +27,10 @@ class gui(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.hostsList = wx.ListBox(self, -1, choices=[])
         self.Bind(wx.EVT_LISTBOX_DCLICK, self.doubleclick, self.hostsList)
-        
-        self.text_ctrl_1 = wx.TextCtrl(self, -1, "")
-        self.Add = wx.Button(self, ID_ADD, "Add")
-        self.Bind(wx.EVT_BUTTON, self.addItem, id=ID_ADD)
 
 
         self.setupIcon()
         
-        self.button_1 = wx.Button(self,ID_REMOVE, "Remove")
-        self.Bind(wx.EVT_BUTTON, self.removeItem, id=ID_REMOVE)
         self.__set_properties()
         self.__do_layout()
         self.Bind(wx.EVT_CLOSE, self.onClose)
@@ -54,7 +48,7 @@ class gui(wx.Frame):
         self.mutex = threading.Condition()
         self.updateList()
         self.stop_event = threading.Event()
-        self.thread = threading.Thread(target=self.updatingThread, args=[self.stop_event])
+        self.thread = threading.Thread(target=self.thread, args=[])
         self.thread.start()
     def doubleclick(self,event):
         
@@ -76,30 +70,29 @@ class gui(wx.Frame):
     def onClose(self, event):
         # Close second thread
         self.stop_event.set()
-
         # Write hosts to file
         self.xmlManager.writeHostList(self.hm.getHosts())
         # Destroy window
         self.Destroy()
-        
+        print "Hello"
         sys.exit(0)
         exit(0)
         
-    def updatingThread(self, stop_event):
-        index = 0
-        while (not stop_event.is_set()):
+    def thread(self):
+        while (self.stop_event.is_set()):
             self.mutex.acquire()
-            size = self.hm.getSize()
             try:
-                if ((index < size) & (index < self.hostsList.GetSize())):
-                        self.updateListItem(index)
-                        index = index + 1
-                else :
-                    index = 0
+                self.updateList()
             finally:
-                #self.mutex.wait()
-                self.mutex.release()      
-            #time.sleep(WAIT_TIME)
+                self.mutex.release()
+            
+    def updatingThread(self):
+        for index in range(self.hm.getSize()):
+            self.mutex.acquire()
+            try:
+                self.updateListItem(index)
+            finally:
+                self.mutex.release()
 
     def startLoading(self):
         # Make cursor busy
@@ -185,8 +178,7 @@ class gui(wx.Frame):
     def __set_properties(self):
         # begin wxGlade: Pinger.__set_properties
         self.SetTitle("Pinger")
-        self.SetSize((300, 480))
-        self.text_ctrl_1.SetMinSize((120, 23))
+        self.SetSize((300, 400))
         # end wxGlade
 
     def __do_layout(self):
@@ -200,11 +192,8 @@ class gui(wx.Frame):
         sizer_1 = wx.BoxSizer(wx.VERTICAL)
         sizer_1.Add(self.hostsList, 1, wx.EXPAND | wx.ALIGN_RIGHT | wx.ALIGN_BOTTOM, 0)
         sizer_4.Add(sizer_1, 80, wx.EXPAND, 0)
-        grid_sizer_1.Add(self.text_ctrl_1, 0, wx.LEFT | wx.EXPAND, 0)
-        grid_sizer_1.Add(self.Add, 0, wx.ALIGN_RIGHT, 0)
         sizer_3.Add(grid_sizer_1, 1, wx.EXPAND, 0)
         sizer_2.Add(sizer_3, 25, wx.EXPAND, 0)
-        grid_sizer_2.Add(self.button_1, 0, wx.RIGHT, 0)
         sizer_5.Add(grid_sizer_2, 1, wx.EXPAND, 0)
         sizer_2.Add(sizer_5, 10, wx.EXPAND, 0)
         sizer_4.Add(sizer_2, 8, wx.EXPAND, 20)
