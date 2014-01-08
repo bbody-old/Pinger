@@ -11,4 +11,4 @@ Set ports for UltraVNC
 List of hosts with name and address
 #Executable
 To convert to a Windows executable download <a href="http://www.py2exe.org/">P2exe</a> and once installed in Windows command line type "python setup.py install"
-Or you could download it from <a href="https://www.dropbox.com/s/vhu1t8acxg714zb/Pinger.zip">here</a> (No responsibility for any problems)
+Or you could download it from <a href="https://github.com/bbody/Pinger/releases/latest">here</a> (No responsibility for any problems)
