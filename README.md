@@ -37,5 +37,7 @@ List of hosts, requiring both an IP address or hostname with a custom name.
 ```
 
 ## P2exe install
-To convert to a Windows executable download <a href="http://www.py2exe.org/">P2exe</a> and once installed in Windows command line type "python setup.py install"
-Or you could download it from <a href="https://github.com/bbody/Pinger/releases/latest">here</a> (No responsibility for any problems)
+1. Download [P2exe](http://www.py2exe.org/)
+2. Run command in command line `python setup.py install`
+
+Alternatively you can download precompiled version [P2exe](https://github.com/bbody/Pinger/releases/latest)
