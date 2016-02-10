@@ -23,7 +23,7 @@ Set UltraVNC path change `<ultravnc directory="" />` to directory of UltraVNC ex
 ### ports.xml
 Set ports for UltraVNC, default port is 5900.
 
-```
+```xml
 <port name = "VNC">
 	<number>5900</number>
 </port>
@@ -32,8 +32,10 @@ Set ports for UltraVNC, default port is 5900.
 ### hosts.xml
 List of hosts, requiring both an IP address or hostname with a custom name.
 
-```
-<hosts><host address="127.0.0.1" name="home" /></hosts>
+```xml
+<hosts>
+	<host address="127.0.0.1" name="home" />
+</hosts>
 ```
 
 ## P2exe install
