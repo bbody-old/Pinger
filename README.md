@@ -12,13 +12,17 @@ Download the packaged Windows executable from [here](https://github.com/bbody/Pi
 1. [Download Python](https://www.python.org/)
 2. [Download wxPython](http://www.wxpython.org/)
 3. Get source code `git clone https://github.com/bbody/Pinger.git`
-4. Run `Pinger.py`
+4. Run *Pinger.py*
 
 ## Config files
 Files already have already have example values.
 
 ### config.xml
-Set UltraVNC path change `<ultravnc directory="" />` to directory of UltraVNC exe.
+Set UltraVNC path change  to directory of UltraVNC exe.
+
+```xml
+<ultravnc directory="" />
+```
 
 ### ports.xml
 Set ports for UltraVNC, default port is 5900.
