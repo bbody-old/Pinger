@@ -1,5 +1,5 @@
 import wx
-from gui import gui
+from Source.gui import gui
 MAIN = "__main__"
 
 def main():
