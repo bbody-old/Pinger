@@ -12,3 +12,13 @@ List of hosts with name and address
 #Executable
 To convert to a Windows executable download <a href="http://www.py2exe.org/">P2exe</a> and once installed in Windows command line type "python setup.py install"
 Or you could download it from <a href="https://github.com/bbody/Pinger/releases/latest">here</a> (No responsibility for any problems)
+
+## Running instructions
+### Executable
+Download the packaged Windows executable from [here](https://github.com/bbody/Pinger/releases). Run *Pinger.exe*.
+
+### From Source
+1. [Download Python](https://www.python.org/)
+2. [Download wxPython](http://www.wxpython.org/)
+3. Get source code `git clone https://github.com/bbody/Pinger.git`
+4. Run `Pinger.py`
