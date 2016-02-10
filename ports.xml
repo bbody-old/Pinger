@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<ports>
-	<port name = "VNC">
-		<number>5900</number>
-	</port>
-	<port name = "VNC">
-		<number>5901</number>
-	</port>
-</ports>

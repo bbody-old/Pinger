@@ -1,6 +1,7 @@
 import wx
 from gui import gui
 MAIN = "__main__"
+
 def main():
     #Set up UI
     app = wx.PySimpleApp(0)

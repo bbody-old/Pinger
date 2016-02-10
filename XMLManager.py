@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from Host import Host
 
-hosts_filename = "hosts.xml"
+hosts_filename = "Files/hosts.xml"
 
 class XMLManager:
     def XMLManager(self):

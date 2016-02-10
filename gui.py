@@ -15,7 +15,7 @@ import sys
 ID_ADD = 1
 ID_REMOVE = 2
 
-ICON = "pinger.ico"
+ICON = "Files/pinger.ico"
 
 #WAIT_TIME = 
 

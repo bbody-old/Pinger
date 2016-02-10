@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import subprocess
 from threading import Thread
 
-config_filename = "config.xml"
+config_filename = "Files/config.xml"
 
 class UltraVNC():
     def __init__(self):
