@@ -1,6 +1,6 @@
-#Pinger
+# Pinger
 
-##Description
+## Description
 A small Python applicatio to track remote hosts for Windows. It also allows direct connecting to UltraVNC.
 
 ![alt text](https://s3-ap-southeast-2.amazonaws.com/bbody-images/github/Pinger/screenshot.png "Screenshot of Pinger")
